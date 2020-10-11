@@ -26,3 +26,12 @@ ion-menu-button {
 #container a {
   text-decoration: none;
 }
+.imgIncio {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 70px;
+  border-radius: 8px;
+}
