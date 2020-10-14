@@ -8,19 +8,59 @@ import { ApiService } from "../../../service/api.service";
   styleUrls: ["./page1.page.scss"],
 })
 export class Page1Page implements OnInit {
-  public brazil: [];
+  public data: [
+    /*  {
+      uid: 11;
+      uf: "Rondônia";
+      state: "RO";
+      cases: 0;
+      deaths: 0;
+      suspects: 61;
+      refuses: 2;
+      broadcast: false;
+      comments: "";
+      datetime: "2020-03-18T23:00:00.000Z";
+    },
+    {
+      uid: 12;
+      uf: "Acre";
+      state: "AC";
+      cases: 0;
+      deaths: 0;
+      suspects: 12;
+      refuses: 0;
+      broadcast: false;
+      comments: "";
+      datetime: "2020-03-18T23:00:00.000Z";
+    },
+    {
+      uid: 13;
+      uf: "Amazonas";
+      state: "AM";
+      cases: 1;
+      deaths: 0;
+      suspects: 18;
+      refuses: 26;
+      broadcast: false;
+      comments: "";
+      datetime: "2020-03-18T23:00:00.000Z";
+    } */
+  ];
 
   constructor(
     public apiService: ApiService,
     public modalFechar: ModalController
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getObjeto();
+  }
 
-  getPais() {
-    this.apiService.getPais().subscribe((res) => {
-      //this.brazil = res.dados;
-      console.log(res);
+  async getObjeto() {
+    this.apiService.getObjeto().subscribe((response) => {
+      //console.log("estou aqui ...");
+      this.data = response.dados;
+      //console.log(response.dados);
     });
   }
 
