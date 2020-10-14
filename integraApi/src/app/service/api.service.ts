@@ -9,7 +9,7 @@ export class ApiService {
   public url: string = environment.baseUrl;
   constructor(public httpclient: HttpClient) {}
 
-  public getObjeto() {
+  public getObjetApi() {
     return this.httpclient.get(this.url);
   }
 }

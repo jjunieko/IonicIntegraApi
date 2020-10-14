@@ -9,9 +9,9 @@ import { ApiService } from "../../../service/api.service";
 })
 export class Page1Page implements OnInit {
   public data: [
-    /*  {
-      uid: 11;
-      uf: "Rondônia";
+    {
+      uid: number;
+      uf: string;
       state: "RO";
       cases: 0;
       deaths: 0;
@@ -44,7 +44,7 @@ export class Page1Page implements OnInit {
       broadcast: false;
       comments: "";
       datetime: "2020-03-18T23:00:00.000Z";
-    } */
+    }
   ];
 
   constructor(
@@ -57,10 +57,10 @@ export class Page1Page implements OnInit {
   }
 
   async getObjeto() {
-    this.apiService.getObjeto().subscribe((response) => {
+    this.apiService.getObjetApi().subscribe((res) => {
       //console.log("estou aqui ...");
-      this.data = response.dados;
-      //console.log(response.dados);
+      this.data = res.data;
+      console.log(res.data);
     });
   }
 
