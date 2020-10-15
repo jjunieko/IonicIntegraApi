@@ -1,0 +1,16 @@
+<ion-router-outlet>
+    <ion-button (click)="fecharCard()" color="secondary" [routerLink]="['folder/page/page1']">
+        <ion-icon name="close"></ion-icon>
+    </ion-button>
+    <ion-card *ngFor="let data of datas">
+
+        <ion-card-header>
+            <ion-card-subtitle>UF {{ data.uf}}</ion-card-subtitle>
+            <ion-card-title>Estado:{{ data.state}}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>Casos:{{data.cases}} </ion-card-content>
+        <ion-card-content>Suspeitos:{{data.suspects}} </ion-card-content>
+        <ion-card-content>Mortes:{{data.deaths}} </ion-card-content>
+    </ion-card>
+</ion-router-outlet>

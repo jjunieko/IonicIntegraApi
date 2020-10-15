@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "folder/page/page1",
+    redirectTo: "page/page1",
     pathMatch: "full",
   },
   {
@@ -15,7 +15,11 @@ const routes: Routes = [
   {
     path: "folder/page/page1",
     loadChildren: () =>
-      import("./folder/page/page1/page1.module").then((m) => m.Page1PageModule),
+      import("./page/page1/page1.module").then((m) => m.Page1PageModule),
+  },
+  {
+    path: 'page-crud',
+    loadChildren: () => import('./page/page-crud/page-crud.module').then( m => m.PageCrudPageModule)
   },
 ];
 
