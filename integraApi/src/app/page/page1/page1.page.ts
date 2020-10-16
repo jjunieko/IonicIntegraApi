@@ -30,7 +30,7 @@ export class Page1Page implements OnInit {
     });
   }
 
-  fecharCard(): void {
+ /*  fecharCard(): void {
     this.modalFechar.dismiss();
-  }
+  } */
 }

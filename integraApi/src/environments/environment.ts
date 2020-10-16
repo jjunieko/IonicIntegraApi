@@ -4,6 +4,7 @@
 
 export const environment = {
   baseUrl: "https://covid19-brazil-api.now.sh/api/report/v1",
+  baseUrl2: "https://api.api-futebol.com.br/v1/partidas/",
   production: false,
 };
 

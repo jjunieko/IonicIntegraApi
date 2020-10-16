@@ -21,6 +21,7 @@ const routes: Routes = [
     path: 'page-crud',
     loadChildren: () => import('./page/page-crud/page-crud.module').then( m => m.PageCrudPageModule)
   },
+
 ];
 
 @NgModule({

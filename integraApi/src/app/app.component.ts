@@ -18,11 +18,11 @@ export class AppComponent implements OnInit {
       icon: "person",
     },
     {
-      title: "Outbox",
-      url: "/folder/Outbox",
-      icon: "paper-plane",
+      title: "CRUD",
+      url: "page-crud",
+      icon: "archive",
     },
-    {
+  /*   {
       title: "Favorites",
       url: "/folder/Favorites",
       icon: "heart",
@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
       title: "Spam",
       url: "/folder/Spam",
       icon: "warning",
-    },
+    }, */
   ];
   public labels = ["Teste", "Teste"];
 
