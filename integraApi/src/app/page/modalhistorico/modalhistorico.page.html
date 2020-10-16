@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-button (click)="fecharCard()">
+            <ion-icon name="close"></ion-icon>
+        </ion-button>
+        <ion-title>modalhistorico</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+    <ion-list>
+        <ion-list-header>
+            Atualizar dados ou incluir
+        </ion-list-header>
+
+        <ion-item>
+            <ion-avatar slot="start">
+                <img src="./avatar-finn.png">
+            </ion-avatar>
+            <ion-label>
+                <ion-row>
+                    <ion-col>
+                        <ion-item color="#ff9">
+                            <ion-label>Nome do estado: </ion-label>
+                            <ion-input></ion-input>
+                        </ion-item>
+                        <ion-item color="#ff9">
+                            <ion-label>Casos: </ion-label>
+                            <ion-input></ion-input>
+                        </ion-item>
+                        <ion-item color="#ff9">
+                            <ion-label>Suspeito: </ion-label>
+                            <ion-input></ion-input>
+                        </ion-item>
+                        <ion-item color="#ff9">
+                            <ion-label>Mortes: </ion-label>
+                            <ion-input></ion-input>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+
+
+</ion-content>

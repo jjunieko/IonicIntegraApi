@@ -29,14 +29,14 @@ export class PageCrudPage implements OnInit {
        console.log(res);
      }) */
    }
-      getJogosFutebol() {
+  /*     getJogosFutebol() {
         this.apiService.getAllPartidas().subscribe((res)=> {
           console.log("teste")
           this.jogos = res.data
           console.log(res.data, "aqui.....")
         })
       }
-   
+    */
 
   ngOnInit() {
   }
