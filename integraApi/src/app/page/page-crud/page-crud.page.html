@@ -6,18 +6,45 @@
 
 
 <ion-content>
-    <ion-list>
-        <ion-item-sliding *ngFor="let data of jogos">
-            <ion-item>
-                <ion-avatar slot="start">
-                    <img src="http://placeimg.com/90/90/any" />
-                </ion-avatar>
-                <ion-label>{{ jogos}}</ion-label>
-            </ion-item>
-            <ion-item-options side="end">
-                <ion-item-option (click)="unread(item)">Unread</ion-item-option>
-            </ion-item-options>
-        </ion-item-sliding>
-    </ion-list>
+    <!-- <ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="ios">
+        <ion-slide *ngFor="let users of id">
+            <div class="slide">
+                <img src="#" />
+                <h2>{{users.url}}</h2>
+                <p>{{users.name}}<b></b> </p>
+            </div>
+        </ion-slide>
+
+        <ion-slide>
+            <img src="https://avatars1.githubusercontent.com/u/47192593?s=60&v=4" />
+            <h2>What is Ionic?</h2>
+            <p><b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with web technologies like HTML, CSS, and JavaScript.</p>
+        </ion-slide>
+
+        <ion-slide>
+            <img src="https://avatars1.githubusercontent.com/u/47192593?s=60&v=4" />
+            <h2>What is Ionic Appflow?</h2>
+            <p><b>Ionic Appflow</b> is a powerful set of services and features built on top of Ionic Framework that brings a totally new level of app development agility to mobile dev teams.</p>
+        </ion-slide>
+
+        <ion-slide>
+            <img src="https://avatars1.githubusercontent.com/u/47192593?s=60&v=4" />
+            <h2>Ready to Play?</h2>
+            <ion-button fill="clear">Continue
+                <ion-icon slot="end" name="arrow-forward"></ion-icon>
+            </ion-button>
+        </ion-slide>
+    </ion-slides> -->
+    <ion-card *ngFor="let users of login">
+        <ion-card-header>
+            <ion-card-subtitle>UF {{users.login}}</ion-card-subtitle>
+            <ion-card-title>Estado:</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>Casos: </ion-card-content>
+        <ion-card-content>Suspeitos: </ion-card-content>
+        <ion-card-content>Mortes:</ion-card-content>
+
+    </ion-card>
+
 
 </ion-content>

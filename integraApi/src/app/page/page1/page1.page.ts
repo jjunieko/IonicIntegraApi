@@ -6,6 +6,7 @@ import { ModalhistoricoPage } from '../modalhistorico/modalhistorico.page';
 import { IonInfiniteScroll } from '@ionic/angular';
 
 
+
 @Component({
   selector: "app-page1",
   templateUrl: "./page1.page.html",
@@ -44,7 +45,6 @@ export class Page1Page implements OnInit {
   toggleInfiniteScroll() {
     this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
   }
-
 
 
   async abrirModalCovid() {

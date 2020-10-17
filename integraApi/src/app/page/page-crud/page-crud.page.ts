@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiFutebolService } from 'src/app/service/api-futebol.service';
+import { ApiGithubService } from '../../service/api-github.service';
+
+
 
 @Component({
   selector: 'app-page-crud',
@@ -7,38 +9,23 @@ import { ApiFutebolService } from 'src/app/service/api-futebol.service';
   styleUrls: ['./page-crud.page.scss'],
 })
 export class PageCrudPage implements OnInit {
-      jogos = [];
+      login: Array<any> = [];
 
-  constructor( private apiService: ApiFutebolService) {
-    /* this.createLista();
-    this.cadastrarLista();
-    this.updateLista();
-    this.deleteLista();
-   }
-
-   createLista() {
-    this.apiService.createLista(data).subscribe((data) =>{
-      this.createLista = data;
-    })
-   };
-
-
-   cadastrLista(){
-     this.apiService.cadastrarLista().subscribe((res) =>{
-       this.cadastrarLista = res;
-       console.log(res);
-     }) */
-   }
-  /*     getJogosFutebol() {
-        this.apiService.getAllPartidas().subscribe((res)=> {
-          console.log("teste")
-          this.jogos = res.data
-          console.log(res.data, "aqui.....")
-        })
-      }
-    */
+  constructor(public apiGitHub: ApiGithubService) {
+  }
 
   ngOnInit() {
+    this.getGitHubPerfil();
   }
+
+
+  getGitHubPerfil() {
+    this.apiGitHub.getGitHubPage().subscribe((res) => {
+      console.log(res,"array")
+      this.login = res;
+      console.log(res, "estou aqui")
+    })
+  }
+
    
 }

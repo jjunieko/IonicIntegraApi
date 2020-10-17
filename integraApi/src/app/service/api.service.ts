@@ -11,7 +11,7 @@ import { ResponseApi } from '../models/response-api';
 })
 export class ApiService {
   public url: string = environment.baseUrl;
-  constructor(public httpclient: HttpClient, /* public storage: Storage */) {}
+  constructor(public httpclient: HttpClient) {}
 
    public getObjetApi():Observable<ResponseApi> {
     return  this.httpclient.get<ResponseApi>(this.url);
