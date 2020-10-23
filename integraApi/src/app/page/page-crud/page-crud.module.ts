@@ -1,20 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from "@ionic/angular";
 
-import { PageCrudPageRoutingModule } from './page-crud-routing.module';
+import { PageCrudPageRoutingModule } from "./page-crud-routing.module";
 
-import { PageCrudPage } from './page-crud.page';
+import { PageCrudPage } from "./page-crud.page";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PageCrudPageRoutingModule
+    PageCrudPageRoutingModule,
+    ReactiveFormsModule,
   ],
-  declarations: [PageCrudPage]
+  declarations: [PageCrudPage],
 })
 export class PageCrudPageModule {}

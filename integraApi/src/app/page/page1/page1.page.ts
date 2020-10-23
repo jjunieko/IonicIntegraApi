@@ -1,11 +1,8 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { ModalController } from "@ionic/angular";
 import { ApiService } from "../../service/api.service";
-import { ResponseApi } from "../../models/response-api"
-import { ModalhistoricoPage } from '../modalhistorico/modalhistorico.page';
-import { IonInfiniteScroll } from '@ionic/angular';
-
-
+import { ResponseApi } from "../../models/response-api";
+import { IonInfiniteScroll } from "@ionic/angular";
 
 @Component({
   selector: "app-page1",
@@ -13,10 +10,9 @@ import { IonInfiniteScroll } from '@ionic/angular';
   styleUrls: ["./page1.page.scss"],
 })
 export class Page1Page implements OnInit {
-  public datas: ResponseApi;
-  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+  public covid: Array<ResponseApi> = [];
 
-  
+  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
   constructor(
     public apiService: ApiService,
@@ -24,47 +20,68 @@ export class Page1Page implements OnInit {
     public modal: ModalController
   ) {}
 
- async ngOnInit() {
-   await this.getObjeto();
+  async ngOnInit() {
+    await this.getObjeto();
   }
 
-
   loadData(event) {
-    setTimeout(() => {
-      console.log('Done');
-      event.target.complete();
+    setTimeout(
+      () => {
+        console.log("Done");
+        event.target.complete();
 
-      // App logic to determine if all data is loaded
-      // and disable the infinite scroll
-      if (Page1Page.data.length === 1000) {
-        event.target.disabled = true;
-      }
-    }, 3000);
+        // App logic to determine if all data is loaded
+        // and disable the infinite scroll
+        if (Page1Page.covid.length === 1000) {
+          event.target.disabled = true;
+        } else {
+          console.log("erro na página");
+        }
+      },
+      3000,
+      alert("final da pagina, volte ao topo")
+    );
   }
 
   toggleInfiniteScroll() {
     this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
   }
 
-
-  async abrirModalCovid() {
+  /*   async abrirModalCovid() {
     const modal = await this.modal.create({
       component: ModalhistoricoPage,
     });
     return await modal.present();
-  }
+  } */
 
-
-
- getObjeto() {
-     this.apiService.getObjetApi().subscribe((res) => {
+  getObjeto() {
+    this.apiService.getObjetApi().subscribe((res) => {
       //console.log(res, "aqui");
-      this.datas =  res.data;
+      this.covid = res.data;
       console.log(res.data, "aqui....");
     });
   }
 
- /* fecharCard(): void {
-    this.modalFechar.dismiss();
-  }  */
+  search(event): void {
+    let pesquisarEstado = event.target.value;
+    if (!pesquisarEstado) {
+      this.getObjeto();
+      return;
+    }
+    this.covid = this.covid.filter((estado) => {
+      return estado.state
+        .toLocaleLowerCase()
+        .includes(pesquisarEstado.toLowerCase());
+    });
+  }
+  clear(): void {
+    this.getObjeto();
+  }
+
+  //modelo de filter
+  /* this.foodList = this.foodList.filter(currentFood => {
+    if (currentFood.name && searchTerm) {
+      return (currentFood.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1);
+    }
+  }); */
 }

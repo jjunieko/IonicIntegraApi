@@ -8,47 +8,54 @@
 </ion-header>
 
 <ion-content>
+    <ion-list-header> Atualizar dados ou incluir </ion-list-header>
 
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+        <ion-list>
+            <ion-item>
+                <ion-avatar slot="start">
+                    <img src="https://avatars3.githubusercontent.com/u/47192593?v=4" />
+                    <p>por:</p>
+                </ion-avatar>
+                <ion-label>
+                    <ion-row>
+                        <ion-col>
+                            <ion-row>
+                                <ion-col size="12">
+                                    <ion-item color="#ff9">
+                                        <ion-label></ion-label>
+                                        <ion-input formControlName="uf" placeholder="sigla:"></ion-input>
+                                    </ion-item>
+                                </ion-col>
+                            </ion-row>
 
-    <ion-list>
-        <ion-list-header>
-            Atualizar dados ou incluir
-        </ion-list-header>
+                            <ion-row>
+                                <ion-col size="12">
+                                    <ion-item color="#ff9">
+                                        <ion-label></ion-label>
+                                        <ion-input formControlName="state" placeholder="Estado:"></ion-input>
+                                    </ion-item>
+                                </ion-col>
+                            </ion-row>
 
-        <ion-item>
-            <ion-avatar slot="start">
-                <img src="./avatar-finn.png">
-            </ion-avatar>
-            <ion-label>
-                <ion-row>
-                    <ion-col>
-                        <ion-item color="#ff9">
-                            <ion-label>Nome do estado: </ion-label>
-                            <ion-input></ion-input>
-                        </ion-item>
-                        <ion-item color="#ff9">
-                            <ion-label>Casos: </ion-label>
-                            <ion-input></ion-input>
-                        </ion-item>
-                        <ion-item color="#ff9">
-                            <ion-label>Suspeito: </ion-label>
-                            <ion-input></ion-input>
-                        </ion-item>
-                        <ion-item color="#ff9">
-                            <ion-label>Mortes: </ion-label>
-                            <ion-input></ion-input>
-                        </ion-item>
+                            <ion-row>
+                                <ion-col size="12">
+                                    <ion-item color="#ff9">
+                                        <ion-label></ion-label>
+                                        <ion-input formControlName="cases" placeholder="Casos:"></ion-input>
+                                    </ion-item>
+                                </ion-col>
+                            </ion-row>
 
-                        <ion-button (click)="onClick()">
-                            <ion-icon slot="end" name="checkmark-outline"></ion-icon>
-                            Salvar
-                        </ion-button>
-
-                    </ion-col>
-                </ion-row>
-            </ion-label>
-        </ion-item>
-    </ion-list>
-
-
+                            <ion-button type="submit" color="success" expand="block">
+                                <!-- (click)="salvarDadosCv()" -->
+                                <ion-icon slot="end" name="checkmark-outline"></ion-icon>
+                                {{isEdit == true ? 'Atualizar' : 'salvar'}}
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </form>
 </ion-content>

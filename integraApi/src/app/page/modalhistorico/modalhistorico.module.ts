@@ -1,20 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from "@ionic/angular";
 
-import { ModalhistoricoPageRoutingModule } from './modalhistorico-routing.module';
+import { ModalhistoricoPageRoutingModule } from "./modalhistorico-routing.module";
 
-import { ModalhistoricoPage } from './modalhistorico.page';
+import { ModalhistoricoPage } from "./modalhistorico.page";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
-    ModalhistoricoPageRoutingModule
+    ModalhistoricoPageRoutingModule,
   ],
-  declarations: [ModalhistoricoPage]
+  declarations: [ModalhistoricoPage],
 })
 export class ModalhistoricoPageModule {}
