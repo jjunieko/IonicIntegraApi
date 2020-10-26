@@ -30,6 +30,7 @@ npm install
 ionic start
 
 ```
+![Capturar](https://user-images.githubusercontent.com/47192593/97239072-90321a00-17c9-11eb-8df8-1a9e5323ab8f.JPG)
 
 
 ## Author
