@@ -4,6 +4,7 @@ import { ApiService } from "../../service/api.service";
 import { ResponseApi } from "../../models/response-api";
 import { IonInfiniteScroll } from "@ionic/angular";
 
+
 @Component({
   selector: "app-page1",
   templateUrl: "./page1.page.html",
@@ -13,6 +14,7 @@ export class Page1Page implements OnInit {
   public covid: Array<ResponseApi> = [];
 
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+  static covid: any;
 
   constructor(
     public apiService: ApiService,

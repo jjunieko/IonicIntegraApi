@@ -4,5 +4,6 @@ export interface SalvarItem {
   cases: number;
   deaths: number;
   suspects: number;
+  data: number;
   uid: number;
 }

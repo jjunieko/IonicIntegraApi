@@ -25,6 +25,7 @@ export class ModalhistoricoPage implements OnInit {
       cases: [""],
       deaths: [""],
       suspects: [""],
+      data:[""],
       uid: [""],
     });
   }

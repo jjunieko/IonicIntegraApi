@@ -31,9 +31,9 @@ export class PageCrudPage implements OnInit {
     return await modal.present();
   }
 
-  async editarDadosCovidVindoDaModal(id: number) {
+  async editarDadosCovidVindoDaModal(id: number): Promise<void> {
     const modal = await this.modal.create({
-      component: ModalController,
+      component: ModalhistoricoPage,
       componentProps: {
         id,
       },
@@ -44,11 +44,18 @@ export class PageCrudPage implements OnInit {
     return await modal.present();
   }
 
-  public async getCovidForm() {
+  async delete(key) {
+      await this.salvarService.delete(key);
+      await this.getCovidForm();
+  }
+
+  public async getCovidForm() : Promise<void>{
     setTimeout(async () => {
       console.log(this.salvarItens, "aqui teste");
       this.salvarItens = await this.salvarService.getListarTodos();
       console.log(this.salvarItens, "vamos chegar aqui ");
     }, 2000);
   }
+
+
 }

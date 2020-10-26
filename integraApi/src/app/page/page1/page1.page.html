@@ -5,9 +5,9 @@
                 <ion-icon slot="start" name="chevron-back-outline"> </ion-icon>
             </ion-button>
 
-            <ion-button slot="end" (click)="abrirModalCovid()">
+            <!-- <ion-button slot="end" (click)="abrirModalCovid()">
                 <ion-icon name="add-circle-outline"></ion-icon>
-            </ion-button>
+            </ion-button> -->
             <ion-title>API com Crud</ion-title>
         </ion-toolbar>
     </ion-header>
@@ -31,7 +31,7 @@
             <ion-card-content>Suspeitos:{{data.suspects}} </ion-card-content>
             <ion-card-content>Mortes:{{data.deaths}} </ion-card-content>
 
-            <ion-button (click)="abrirModalCovid()">
+            <!-- <ion-button (click)="abrirModalCovid()">
                 <ion-icon slot="end" name="star"></ion-icon>
                 Atualizar
             </ion-button>
@@ -39,7 +39,7 @@
             <ion-button color="danger" (click)="onClick()">
                 <ion-icon slot="end" name="trash-outline"></ion-icon>
                 Deletar
-            </ion-button>
+            </ion-button> -->
         </ion-card>
 
         <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">

@@ -8,84 +8,33 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-header collapse="condense">
-        <ion-toolbar>
-            <ion-title size="small">CRUD</ion-title>
-        </ion-toolbar>
-    </ion-header>
-
-    <ion-list *ngFor="let salvarService of salvarItens; let id = index">
+   
+    <ion-list *ngFor="let salvarService of salvarItens; let key = index">
         <ion-item>
             <ion-avatar slot="start">
-                <img src="#" />
+                <img src="https://www.countryflags.io/br/flat/64.png" />
             </ion-avatar>
             <ion-label>
-                <h2>{{ salvarService.uf }}</h2>
+                <h2>{{ salvarService.state }}</h2>
                 <ion-text color="medium">
-                    <h3>teste</h3>
+                    <h3>{{ salvarService.uf }}</h3>
+                    <p>{{ salvarService.cases }}</p>
+                    <p>{{ salvarService.suspects }}</p>
                 </ion-text>
                 <p></p>
             </ion-label>
 
-            <!--  <ion-button (click)="abrirModalCovid()">
-                <ion-icon slot="end" name="star"></ion-icon>
-                Atualizar
-            </ion-button>
 
-            <ion-button color="danger" (click)="onClick()">
-                <ion-icon slot="end" name="trash-outline"></ion-icon>
-                Deletar
-            </ion-button> -->
+        <ion-button color="primary" slot="end" (click)="editarDadosCovidVindoDaModal(key)">
+          <ion-icon name="pencil"></ion-icon>
+        </ion-button>
+        <ion-button color="danger" slot="end" (click)="delete(key)">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+
         </ion-item>
-    </ion-list>
+    </ion-list> 
+
+
 </ion-content>
 
-<!--  <ion-list>
-        <ion-item *ngFor="let salvar of salvar">
-            <ion-avatar slot="start">
-                <img src="http://lorempixel.com/150/100/food/" />
-            </ion-avatar>
-            <ion-label>
-                <h2>{{salvar.nome}}</h2>
-                <ion-text color="medium">
-                    <h3>{{comida.tipo}}</h3>
-                </ion-text>
-                <p>{{comida.descricao}}</p>
-            </ion-label>
-            <ion-button slot="end" color="secondary" (click)="editarComida(id)">
-                <ion-icon name="pencil-outline"></ion-icon>
-            </ion-button>
-            <ion-button slot="end" color="danger" (click)="actionSheetDelete(id)">
-                <ion-icon name="trash-outline"></ion-icon>
-            </ion-button>
-        </ion-item>
-    </ion-list> -->
-
-<!--  <ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="ios">
-            <ion-slide *ngFor="let users of login">
-                <div class="slide">
-                    <img src="" />
-                    <h2>{{users.name}}</h2>
-                    <p>{{users.login}}<b></b></p>
-                </div>
-            </ion-slide>
-
-        <ion-slide>
-            <img src="" />
-            <h2></h2>
-            <p><b></b></p>
-        </ion-slide> -->
-<!-- 
-        <ion-slide>
-            <img src="https://avatars1.githubusercontent.com/u/47192593?s=60&v=4" />
-            <h2>What is Ionic Appflow?</h2>
-            <p><b>Ionic Appflow</b> is a powerful set of services and features built on top of Ionic Framework that brings a totally new level of app development agility to mobile dev teams.</p>
-        </ion-slide>
-
-        <ion-slide>
-            <img src="https://avatars1.githubusercontent.com/u/47192593?s=60&v=4" />
-            <h2>Ready to Play?</h2>
-            <ion-button fill="clear">Continue
-                <ion-icon slot="end" name="arrow-forward"></ion-icon>
-            </ion-button>
-        </ion-slide> -->

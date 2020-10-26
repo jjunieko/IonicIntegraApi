@@ -1,4 +1,6 @@
 export interface ResponseApi {
+  state: any;
+  data: any;
   covid: ResponseApi;
   filter: Array<any>;
   /*  uid: number;
