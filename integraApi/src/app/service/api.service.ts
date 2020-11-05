@@ -16,15 +16,3 @@ export class ApiService {
     return this.httpclient.get<ResponseApi>(this.url);
   }
 }
-/* 
-    public async salvarDados() {
-    this.update(this.url)
-    
-    await this.salvarDados();
-  }
-
-  public async salvar(dadosCovid): Promise<void> {
-    let dadoCovid = await this.getObjetApi();
-
-    await this.storage.set("dadoCovid", JSON.stringify(dadosCovid));
-  } */

@@ -1,7 +1,7 @@
 <ion-router-outlet>
     <ion-header>
         <ion-toolbar>
-            <ion-button (click)="onClick()" slot="start" [routerLink]="['/page-crud']" routerLinkActive="router-link-active">
+            <ion-button slot="start" [routerLink]="['/page-crud']" routerLinkActive="router-link-active">
                 <ion-icon slot="start" name="chevron-back-outline"> </ion-icon>
             </ion-button>
 
@@ -47,48 +47,4 @@
             </ion-infinite-scroll-content>
         </ion-infinite-scroll>
     </ion-content>
-
-    <!-- <ion-card *ngFor="let data of datas">
-        <ion-item>
-            <ion-avatar slot="start">
-                <img src="https://www.fillmurray.com/160/90
-                ">
-            </ion-avatar>
-            <ion-label>
-                <h3>John Doe</h3>
-                <p>UF {{ data.uf}}</p>
-            </ion-label>
-        </ion-item>
-
-        <img src="http://placeimg.com/640/360/any" alt="ion">
-        <ion-card-header>
-            <ion-card-title>Hotel Panama Garden</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis mollis ligula sed ultrices.
-        </ion-card-content>
-
-        <ion-footer>
-            <ion-row>
-                <ion-col center text-center>
-                    <button>
-            <ion-icon name="thumbs-up"></ion-icon>
-            <div>1.5k Likes</div>
-          </button>
-                </ion-col>
-                <ion-col center text-center>
-                    <button>
-            <ion-icon name="text"></ion-icon>
-            <div>4 Comments</div>
-          </button>
-                </ion-col>
-                <ion-col center text-center>
-                    <button>
-            <ion-icon name="time"></ion-icon>
-            <div>11h ago</div>
-          </button>
-                </ion-col>
-            </ion-row>
-        </ion-footer>
-    </ion-card> -->
 </ion-router-outlet>

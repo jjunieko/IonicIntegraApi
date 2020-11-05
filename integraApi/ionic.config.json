@@ -1,5 +1,7 @@
 {
   "name": "integraApi",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

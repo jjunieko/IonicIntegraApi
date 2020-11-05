@@ -1,9 +1,9 @@
 <ion-header>
     <ion-toolbar>
+        <ion-title>{{editarButao == true ? 'Atualizar' : 'Cadastrar'}} </ion-title>
         <ion-button (click)="fecharCard()">
             <ion-icon name="close"></ion-icon>
         </ion-button>
-        <ion-title>modalhistorico</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -59,7 +59,7 @@
                             <ion-button type="submit" color="success" expand="block">
                                 <!-- (click)="salvarDadosCv()" -->
                                 <ion-icon slot="end" name="checkmark-outline"></ion-icon>
-                                {{isEdit == true ? 'Atualizar' : 'salvar'}}
+                                {{editarButao == true ? 'Atualizar' : 'salvar'}}
                             </ion-button>
                         </ion-col>
                     </ion-row>

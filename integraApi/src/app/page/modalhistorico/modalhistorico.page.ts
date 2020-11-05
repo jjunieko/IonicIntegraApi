@@ -25,7 +25,7 @@ export class ModalhistoricoPage implements OnInit {
       cases: [""],
       deaths: [""],
       suspects: [""],
-      data:[""],
+      data: [""],
       uid: [""],
     });
   }
@@ -41,6 +41,7 @@ export class ModalhistoricoPage implements OnInit {
   public async submitForm(): Promise<void> {
     console.log(this.form.value, "estou aqui modalhist");
     this.salvarService.salvarDadosCv(this.form.value, this.id);
+    this.fecharCard();
   }
 
   public async editarDadosCovidModal(): Promise<void> {
